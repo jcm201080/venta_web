@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h2>Cuéntanos tu idea</h2>
+    <p>Te ayudamos a convertirla en una web que funcione</p>
+</section>
+
+<section class="contacto-form">
+
+    <form method="POST" class="form">
+
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+
+        <input type="email" name="email" placeholder="Tu email" required>
+
+        <textarea name="mensaje" placeholder="¿Qué necesitas?" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Enviar mensaje</button>
+
+    </form>
+
+</section>
+
+<!-- 💡 INFO EXTRA -->
+<section class="ia">
+    <h2>También puedes escribirnos directamente</h2>
+    <p>Respondemos rápido 🚀</p>
+
+    <a href="https://wa.me/346XXXXXXXX" class="btn">WhatsApp</a>
+</section>
+
+{% endblock %}

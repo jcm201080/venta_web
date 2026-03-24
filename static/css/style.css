@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #111;
+    color: white;
+}
+
+.header a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    background: #00bcd4;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.btn-secondary {
+    background: #ff9800;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background: #1e1e1e;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 🔥 clave */
+    min-height: 180px; /* 🔥 importante */
+}
+.card .btn {
+    margin-top: 15px;
+    align-self: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card p {
+    margin-top: 10px;
+}
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.footer {
+    background: #111;
+    color: white;
+    padding: 20px;
+}
+
+
+/* servicios html */
+ul {
+    list-style: none;
+    margin-top: 10px;
+    text-align: left;
+}
+
+li {
+    margin: 5px 0;
+}
+
+.highlight {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #00e676;
+}
+
+/* precios html */
+
+.precio {
+    font-size: 2em;
+    margin: 10px 0;
+    color: #00bcd4;
+}
+
+.popular {
+    border: 2px solid #00e676;
+    transform: scale(1.05);
+}
+
+
+/* contacto html */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.form input,
+.form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form button {
+    cursor: pointer;
+}
+
+
+/* ia chat */
+
+#chat-toggle {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: linear-gradient(135deg, #00bcd4, #2196f3);
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+#chat-toggle:hover {
+    transform: scale(1.1);
+}
+
+#chatbot {
+    position: fixed;
+    bottom: 140px;
+    right: 20px;
+    width: 260px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    color: white;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+#chat-header {
+    background: #00bcd4;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#chat-body {
+    height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+#chat-input {
+    width: 100%;
+    border: none;
+    padding: 10px;
+}
+
+#chat-body {
+    height: 250px;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.msg {
+    max-width: 80%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.msg.user {
+    background: #00bcd4;
+    align-self: flex-end;
+    color: white;
+}
+
+.msg.bot {
+    background: #333;
+    align-self: flex-start;
+    color: white;
+}
+
+#chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #00bcd4;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#chat-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}

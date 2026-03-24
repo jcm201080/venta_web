@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}JCM Web{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="header">
+    <h1>🚀 JCM Web Solutions</h1>
+    <nav>
+        <a href="/">Inicio</a>
+        <a href="/servicios">Servicios</a>
+        <a href="/precios">Precios</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/contacto">Contacto</a>
+    </nav>
+</header>
+
+{% block content %}
+{% endblock %}
+
+<!-- 🤖 BOTÓN CHAT -->
+<div id="chat-toggle">💬</div>
+
+<!-- 🤖 CHAT -->
+<div id="chatbot" class="hidden">
+    <div id="chat-header">
+        <span>Asistente ✨</span>
+        <button id="chat-close">✖</button>
+    </div>
+    <div id="chat-body"></div>
+    <input type="text" id="chat-input" placeholder="Escribe aquí...">
+</div>
+
+<!-- 📲 WHATSAPP GLOBAL -->
+<a href="https://wa.me/34635487063" class="whatsapp" target="_blank">
+    💬
+</a>
+
+<footer class="footer">
+    <p>© 2026 JCM Web Solutions</p>
+</footer>
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>

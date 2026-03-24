@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Servicios{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h2>Planes claros, sin sorpresas</h2>
+    <p>Elige la opción que mejor se adapta a tu negocio</p>
+</section>
+
+<!-- 💰 PLANES -->
+<section class="precios">
+
+    <div class="cards">
+
+        <!-- 🟢 BASICO -->
+        <div class="card">
+            <h3>🟢 Básico</h3>
+            <p class="precio">150€</p>
+
+            <ul>
+                <li>✔ Página web informativa</li>
+                <li>✔ Diseño moderno</li>
+                <li>✔ Contacto + WhatsApp</li>
+                <li>✔ Entrega rápida</li>
+            </ul>
+
+            <p class="highlight">Ideal para empezar</p>
+
+            <a href="/contacto" class="btn">Lo quiero</a>
+        </div>
+
+        <!-- 🟡 PROFESIONAL -->
+        <div class="card popular">
+            <h3>🟡 Profesional</h3>
+            <p class="precio">350€</p>
+
+            <ul>
+                <li>✔ Todo lo del plan básico</li>
+                <li>✔ Base de datos</li>
+                <li>✔ Panel de administración</li>
+                <li>✔ Editable por el cliente</li>
+            </ul>
+
+            <p class="highlight">El más recomendado</p>
+
+            <a href="/contacto" class="btn">Elegir este</a>
+        </div>
+
+        <!-- 🔴 PREMIUM -->
+        <div class="card">
+            <h3>🔴 Premium</h3>
+            <p class="precio">600€+</p>
+
+            <ul>
+                <li>✔ Todo lo anterior</li>
+                <li>✔ Inteligencia Artificial</li>
+                <li>✔ Automatización de clientes</li>
+                <li>✔ Funcionalidades a medida</li>
+            </ul>
+
+            <p class="highlight">Para negocios que quieren escalar</p>
+
+            <a href="/contacto" class="btn">Vamos a por ello</a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- 💡 ACLARACIONES -->
+<section class="ia">
+    <h2>Preguntas frecuentes</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>¿Puedo modificar la web?</h3>
+            <p>Sí, especialmente en el plan profesional tendrás control total.</p>
+        </div>
+
+        <div class="card">
+            <h3>¿Cuánto tarda?</h3>
+            <p>Entre 2 y 7 días dependiendo del proyecto.</p>
+        </div>
+
+        <div class="card">
+            <h3>¿Incluye soporte?</h3>
+            <p>Sí, siempre tendrás ayuda para cualquier duda.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- 🔥 CTA FINAL -->
+<section class="contacto">
+    <h2>¿Tienes dudas?</h2>
+    <p>Escríbenos y te asesoramos sin compromiso</p>
+
+    <a href="/contacto" class="btn">Contactar ahora</a>
+</section>
+
+{% endblock %}
