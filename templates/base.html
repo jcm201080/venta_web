@@ -6,11 +6,14 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
 </head>
 <body>
 
 <header class="header">
-    <h1>🚀 JCM Web Solutions</h1>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="JCM Web Solutions">
+    </div>
     <nav>
         <a href="/">Inicio</a>
         <a href="/servicios">Servicios</a>

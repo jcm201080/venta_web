@@ -2,9 +2,12 @@ from flask import Flask, request, jsonify, session
 import uuid
 import json
 import os
+from config import PRECIOS
+
 
 app = Flask(__name__)
 app.secret_key = "clave_super_secreta_123"
+app.config["PRECIOS"] = PRECIOS
 
 # 🔹 IMPORTAR RUTAS
 from routes.index import index_bp
@@ -60,6 +63,10 @@ def chat():
         print("❌ Error en /chat:", e)
         return jsonify({"respuesta": "Ha habido un error, prueba de nuevo o escríbeme por WhatsApp 📲"})
 
+@app.context_processor
+def inject_precios():
+    return dict(precios=app.config["PRECIOS"])
+
 
 # 🔹 REGISTRAR BLUEPRINTS
 app.register_blueprint(index_bp)
@@ -71,3 +78,4 @@ app.register_blueprint(contacto_bp, url_prefix="/contacto")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8015, debug=True)
+    

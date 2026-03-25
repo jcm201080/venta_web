@@ -1,64 +1,139 @@
+from config import PRECIOS
+
+import os
+import json
+
 def generar_respuesta(contexto):
     ultimo = contexto[-1]["content"].lower()
 
-    # 💰 PRECIOS
+    basico = PRECIOS["basico"]
+    pro = PRECIOS["profesional"]
+    premium = PRECIOS["premium"]
+
+    # 💰 PRECIOS (mejorado)
     if any(p in ultimo for p in ["precio", "cuanto", "coste"]):
         return (
-            "Te explico las opciones de forma clara:\n\n"
-            "🟢 Web básica (150€)\n"
-            "Perfecta si quieres empezar. Incluye una página moderna con información de tu negocio, contacto y WhatsApp.\n\n"
-            "🟡 Web profesional (350€)\n"
-            "Aquí ya tienes control total: base de datos, panel de administración y puedes modificar tu contenido fácilmente.\n\n"
-            "🔴 Web con IA (600€+)\n"
-            "Automatiza tu negocio: la web responde a tus clientes, gestiona reservas o pedidos y trabaja por ti 24/7.\n\n"
-            "👉 Cuéntame qué tipo de negocio tienes y te recomiendo la mejor opción."
+            f"Te explico las opciones más habituales 👇\n\n"
+
+            f"🟢 Web básica ({basico})\n"
+            "Para empezar rápido y tener presencia online.\n\n"
+
+            f"🟡 Web profesional ({pro})\n"
+            "La opción más elegida para negocios activos.\n\n"
+
+            f"🔴 Web con IA ({premium})\n"
+            "Automatiza tu negocio y ahorra tiempo.\n\n"
+
+            "💡 El precio es orientativo según lo que necesites.\n\n"
+
+            "👉 Si me dices tu negocio, te recomiendo la mejor opción 😉"
         )
 
-    # 🧠 CLIENTE CON NEGOCIO
+    # 🎯 QUIERE WEB
+    elif any(p in ultimo for p in ["quiero web", "pagina web", "hacer web"]):
+        return (
+            "Perfecto 🚀 vamos a hacerlo fácil:\n\n"
+            "1️⃣ ¿Qué tipo de negocio tienes?\n"
+            "2️⃣ ¿Qué quieres conseguir? (clientes, reservas, ventas...)\n\n"
+            "👉 Con eso te recomiendo la mejor opción sin complicaciones."
+        )
+
+    # 🧠 NEGOCIO DETECTADO
     elif any(p in ultimo for p in ["negocio", "tengo", "soy"]):
         return (
             "Genial 🔥 eso tiene mucho potencial.\n\n"
-            "Dependiendo de lo que quieras conseguir:\n\n"
-            "👉 Más visibilidad → web básica\n"
-            "👉 Gestionar clientes/productos → web profesional\n"
-            "👉 Automatizar trabajo → web con IA\n\n"
-            "Cuéntame qué te gustaría mejorar y te guío paso a paso."
+
+            f"👉 Empezar rápido → web básica ({basico})\n"
+            f"👉 Gestionar clientes → web profesional ({pro})\n"
+            f"👉 Automatizar → web con IA ({premium})\n\n"
+
+            "👉 ¿Qué te gustaría mejorar ahora mismo?"
         )
 
     # 🤖 IA
     elif "ia" in ultimo:
         return (
-            "La IA en tu web es como tener un asistente digital:\n\n"
-            "✔ Responde a tus clientes automáticamente\n"
+            "La IA convierte tu web en un asistente automático 🤖\n\n"
+            "✔ Responde clientes\n"
             "✔ Explica tus servicios\n"
             "✔ Puede gestionar reservas o pedidos\n\n"
-            "👉 Así no pierdes clientes aunque no estés disponible 😄"
+            "👉 Ideal si quieres ahorrar tiempo y no perder oportunidades."
         )
 
     # ⏱ TIEMPO
     elif any(p in ultimo for p in ["tiempo", "tarda", "dias"]):
         return (
-            "Normalmente trabajamos así:\n\n"
-            "🟢 Web básica → 1-2 días\n"
+            "Trabajamos rápido 🚀\n\n"
+            "🟢 Básica → 1-2 días\n"
             "🟡 Profesional → 3-5 días\n"
             "🔴 IA → 5-7 días\n\n"
-            "Siempre intentamos entregarlo lo antes posible 🚀"
+            "👉 Siempre intentamos entregarlo lo antes posible."
+        )
+    elif any(p in ultimo for p in ["presupuesto", "precio exacto", "cuanto vale", "cuanto seria"]):
+        return (
+            "Perfecto 👌\n\n"
+            "Para darte un precio exacto necesito saber:\n\n"
+            "👉 Tipo de negocio\n"
+            "👉 Qué necesitas (web, reservas, tienda...)\n\n"
+            "Puedes decírmelo aquí o escribirme directamente por WhatsApp 📲"
+        )
+    # 🎯 RECOMENDACIÓN AUTOMÁTICA
+    elif any(p in ultimo for p in ["restaurante", "bar", "cafeteria"]):
+        return (
+            "Perfecto 🍔\n\n"
+            "Para un restaurante te recomiendo:\n\n"
+            f"👉 Web profesional ({pro})\n"
+            "Porque podrás gestionar menú, clientes o pedidos.\n\n"
+            "👉 Si quieres automatizar reservas o pedidos → plan con IA.\n\n"
+            "¿Quieres algo sencillo o más completo?"
         )
 
-    # 🎯 DEFAULT (IMPORTANTE → vender)
+    elif any(p in ultimo for p in ["peluqueria", "barberia", "estetica"]):
+        return (
+            "Genial 💇‍♂️\n\n"
+            "Lo ideal para tu caso:\n\n"
+            f"👉 Web profesional ({pro})\n"
+            "Para gestionar citas y servicios.\n\n"
+            "👉 Con IA puedes automatizar reservas.\n\n"
+            "¿Quieres que los clientes puedan reservar solos?"
+        )
+
+    elif any(p in ultimo for p in ["tienda", "vender", "productos"]):
+        return (
+            "Perfecto 🛒\n\n"
+            "Para vender online necesitas:\n\n"
+            f"👉 Web profesional ({pro}) o superior\n"
+            "Para gestionar productos y pedidos.\n\n"
+            "👉 Si quieres automatizar ventas → plan con IA.\n\n"
+            "¿Qué tipo de productos vendes?"
+        )
+
+    elif any(p in ultimo for p in ["recomienda", "que plan", "cual elegir"]):
+        return (
+            "Te lo pongo fácil 👇\n\n"
+            f"👉 Empezar → Básico ({basico})\n"
+            f"👉 Negocio activo → Profesional ({pro})\n"
+            f"👉 Automatizar → IA ({premium})\n\n"
+            "👉 Si me dices qué negocio tienes, te digo exactamente cuál elegir 😉"
+        )
+
+    elif any(p in ultimo for p in ["no se", "no tengo claro", "duda"]):
+        return (
+            "No te preocupes 👌\n\n"
+            "Te ayudo a elegir la mejor opción según tu caso.\n\n"
+            "👉 ¿A qué te dedicas?"
+        )
+
+    # 💬 CIERRE (MUY IMPORTANTE)
     else:
         return (
-            "Cuéntame qué necesitas 😊\n\n"
-            "Por ejemplo:\n"
-            "👉 'quiero una web para mi negocio'\n"
-            "👉 'cuánto cuesta'\n"
-            "👉 'qué incluye cada plan'\n\n"
-            "Y te explico todo paso a paso."
+            "Cuéntame un poco sobre tu negocio 😊\n\n"
+
+            "👉 ¿A qué te dedicas?\n"
+            "👉 ¿Quieres captar clientes, vender o automatizar?\n\n"
+
+            "Y te digo exactamente qué necesitas 👌"
         )
-
-
-import json
-import os
 
 
 
@@ -79,3 +154,5 @@ def guardar_conversacion(user_id, mensaje, respuesta):
 
     with open(archivo, "w") as f:
         json.dump(data, f, indent=4)
+
+

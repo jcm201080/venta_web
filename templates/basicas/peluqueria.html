@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manolo | La Peluquería Del Caballero en Zafra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-zinc-950 text-zinc-300 font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-scissors text-gold-500 text-2xl"></i>
+                    <span class="font-serif text-2xl font-bold text-white tracking-wide">MANOLO</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#servicios" class="text-zinc-300 hover:text-gold-500 transition-colors">Servicios</a>
+                    <a href="#testimonios" class="text-zinc-300 hover:text-gold-500 transition-colors">Reseñas</a>
+                    <a href="#contacto" class="text-zinc-300 hover:text-gold-500 transition-colors">Ubicación</a>
+                </div>
+                <div class="hidden md:flex">
+                    <a href="#reservar" class="bg-gold-500 hover:bg-gold-600 text-zinc-950 font-semibold px-6 py-2 rounded-sm transition-all shadow-lg shadow-gold-500/20">Reservar Cita</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Barbería" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-gold-500 font-medium tracking-widest uppercase text-sm mb-4 block">Zafra, Badajoz</span>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                La Peluquería <br/><span class="text-gold-500 italic">Del Caballero</span>
+            </h1>
+            <p class="mt-4 text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10">
+                Cortes clásicos, arreglos de barba y tratamientos faciales con un enfoque moderno. Tu estilo es nuestra obra maestra.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-gold-500 hover:bg-gold-600 text-zinc-950 font-semibold px-8 py-4 rounded-sm transition-all text-lg shadow-lg shadow-gold-500/20 flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-calendar-check"></i> Reservar por Booksy
+                </a>
+                <a href="https://wa.me/34895895895" class="bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 text-white font-semibold px-8 py-4 rounded-sm transition-all text-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i> 895 895 895
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Prices Section -->
+    <section id="servicios" class="py-20 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">Nuestros Servicios</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Peluquería -->
+                <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-sm hover:border-gold-500/30 transition-colors">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-zinc-800 flex items-center justify-center rounded-sm text-gold-500">
+                            <i class="fa-solid fa-scissors text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-white">Peluquería</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                            <span>Corte de caballero</span><span class="font-medium text-gold-400">12€</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                            <span>Rapado completo</span><span class="font-medium text-gold-400">10€</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                            <span>Afeitado de cabeza</span><span class="font-medium text-gold-400">12€</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                            <span>Corte de niño</span><span class="font-medium text-gold-400">10€</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                            <span>Lavado y peinado</span><span class="font-medium text-gold-400">5€</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                            <span>Contorno patillas/cuello</span><span class="font-medium text-gold-400">5€</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-2">
+                            <span>Dibujos</span><span class="font-medium text-gold-400">Desde 3€</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Faciales y Barba -->
+                <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-sm hover:border-gold-500/30 transition-colors">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-zinc-800 flex items-center justify-center rounded-sm text-gold-500">
+                            <i class="fa-solid fa-razor text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-white">Facial y Barba</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                            <span>Afeitado completo (Navaja)</span><span class="font-medium text-gold-400">12€</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                            <span>Afeitado completo (Máquina)</span><span class="font-medium text-gold-400">7€</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                            <span>Arreglo de barba</span><span class="font-medium text-gold-400">7€</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                            <span>Recorte de barba</span><span class="font-medium text-gold-400">2€</span>
+                        </li>
+                        <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                            <span>Arreglo cejas (Navaja)</span><span class="font-medium text-gold-400">3€</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-2">
+                            <span>Tratamiento Black Mask</span><span class="font-medium text-gold-400">12€</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tintes y Especiales -->
+                <div class="flex flex-col gap-8">
+                    <div class="bg-zinc-900/50 border border-zinc-800 p-8 rounded-sm hover:border-gold-500/30 transition-colors">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 bg-zinc-800 flex items-center justify-center rounded-sm text-gold-500">
+                                <i class="fa-solid fa-palette text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-white">Color</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                                <span>Tinte en la barba</span><span class="font-medium text-gold-400">20€</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                                <span>Tinte cabello</span><span class="font-medium text-gold-400">25€</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                                <span>Mechas rubias</span><span class="font-medium text-gold-400">30€</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-zinc-800/50 pb-2">
+                                <span>Decoloración</span><span class="font-medium text-gold-400">50€</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2">
+                                <span>Crazy Color</span><span class="font-medium text-gold-400">65€</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-gold-600 to-gold-500 p-8 rounded-sm text-zinc-950 relative overflow-hidden">
+                        <i class="fa-solid fa-crown absolute -right-4 -top-4 text-8xl text-white/20"></i>
+                        <h3 class="text-2xl font-serif font-bold mb-2 relative z-10">Servicio VIP</h3>
+                        <p class="mb-4 font-medium relative z-10">Atención exclusiva a domicilio.</p>
+                        <div class="flex justify-between items-center text-lg font-bold relative z-10">
+                            <span>Precio</span>
+                            <span>Desde 60€</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonios" class="py-20 bg-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Lo que dicen nuestros clientes</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-zinc-950 p-8 rounded-sm border border-zinc-800">
+                    <div class="flex text-gold-500 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-zinc-400 italic mb-6">"El mejor corte que me han hecho en años. El arreglo de barba con navaja y la atención al detalle es de otro nivel. Totalmente recomendado en Zafra."</p>
+                    <div class="font-bold text-white">- Carlos M.</div>
+                </div>
+                <div class="bg-zinc-950 p-8 rounded-sm border border-zinc-800">
+                    <div class="flex text-gold-500 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-zinc-400 italic mb-6">"Llevé a mi hijo y el trato fue excepcional. Se nota la profesionalidad y además usan productos de primera. El local está muy chulo."</p>
+                    <div class="font-bold text-white">- Javier R.</div>
+                </div>
+                <div class="bg-zinc-950 p-8 rounded-sm border border-zinc-800">
+                    <div class="flex text-gold-500 mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-zinc-400 italic mb-6">"Reservar por Booksy es comodísimo y cuando llegas la puntualidad es perfecta. Probé el tratamiento Black Mask y salí encantado."</p>
+                    <div class="font-bold text-white">- Antonio G.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="contacto" class="py-20 bg-zinc-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Encuéntranos en Zafra</h2>
+                    <p class="text-zinc-400 mb-8">Pásate a conocernos o reserva tu cita. Te aseguramos una experiencia de barbería tradicional con todas las comodidades modernas.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-zinc-900 flex items-center justify-center rounded-sm text-gold-500 shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Dirección</h4>
+                                <p class="text-zinc-400">Pendiente de indicar calle<br>06300 Zafra, Badajoz</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-zinc-900 flex items-center justify-center rounded-sm text-gold-500 shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Teléfono</h4>
+                                <p class="text-zinc-400">895 895 895</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-zinc-900 flex items-center justify-center rounded-sm text-gold-500 shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Horario</h4>
+                                <p class="text-zinc-400">Lunes - Viernes: --:-- a --:--<br>Sábados: --:-- a --:--</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 p-2 rounded-sm border border-zinc-800 min-h-[400px]">
+                    <!-- Google Maps Placeholder -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d49980.52865766289!2d-6.442978009890987!3d38.423238686668725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd140882e3a53e53%3A0xe546b54a3be08779!2s06300%20Zafra%2C%20Badajoz!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; min-height: 400px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 border-t border-zinc-900 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-scissors text-gold-500"></i>
+                <span class="font-serif text-xl font-bold text-white">MANOLO</span>
+            </div>
+            <p class="text-zinc-500 text-sm">© 2023 Manolo: La Peluquería Del Caballero. Todos los derechos reservados.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-zinc-500 hover:text-gold-500 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="text-zinc-500 hover:text-gold-500 transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/34895895895" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg shadow-[#25D366]/30 hover:scale-110 transition-transform z-50">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>

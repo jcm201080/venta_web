@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Restaurante JCM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center"> <span
+                        class="font-serif text-2xl font-bold text-gray-900">JCM</span> </div>
+                <div class="hidden md:flex space-x-8 items-center"> <a href="#menu"
+                        class="text-gray-600 hover:text-gray-900 transition">Carta</a> <a href="#horarios"
+                        class="text-gray-600 hover:text-gray-900 transition">Horarios</a> <a
+                        href="https://wa.me/34955975528"
+                        class="bg-gray-900 text-white px-5 py-2 rounded-full hover:bg-gray-800 transition">Pedir a
+                        Domicilio</a> </div>
+            </div>
+        </div>
+    </nav>
+    <header class="relative bg-gray-900 h-screen flex items-center justify-center">
+        <div class="absolute inset-0"> <img
+                src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                alt="Fondo Restaurante" class="w-full h-full object-cover opacity-40"> </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16"> <span
+                class="text-amber-400 font-medium tracking-wider uppercase text-sm mb-4 block">Tradición y Sabor</span>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">Bar Restaurante JCM</h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-10 font-light">Disfruta de nuestras tapas caseras, carnes
+                seleccionadas y el mejor ambiente. Servicio a domicilio disponible por solo 1€.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4"> <a href="#menu"
+                    class="bg-white text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition shadow-lg">Ver
+                    Carta</a> <a href="https://wa.me/34955975528"
+                    class="bg-green-600 text-white px-8 py-3 rounded-full font-medium hover:bg-green-700 transition shadow-lg flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z" />
+                    </svg> Haz tu pedido </a> </div>
+        </div>
+    </header>
+    <section id="menu" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-gray-900 mb-4">Nuestra Carta</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Elaborado con ingredientes frescos y mucho mimo.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">Entrantes</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-gray-900">Ensaladilla</h4>
+                                <p class="text-sm text-gray-500">Tapa 2.50€ | Media 5.00€ | Ración 10.00€</p>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-gray-900">Croquetas Caseras</h4>
+                                <p class="text-sm text-gray-500">Tapa 2.80€ | Media 5.50€</p>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-gray-900">Chocos Fritos</h4>
+                                <p class="text-sm text-gray-500">Tapa 3.00€ | Media 7.00€ | Ración 12.00€</p>
+                            </div>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-gray-900">Carrillada</h4>
+                                <p class="text-sm text-gray-500">Tapa 2.80€ | Media 6.00€</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">Carnes</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-gray-900">Solomillo al Whisky</h4>
+                            </div><span class="font-medium text-amber-600">9.80€</span>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-gray-900">Presa Ibérica</h4>
+                            </div><span class="font-medium text-amber-600">9.50€</span>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-gray-900">Serranito de Cerdo o Pollo</h4>
+                            </div><span class="font-medium text-amber-600">3.70€</span>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-gray-900">Pollo Frito</h4>
+                            </div><span class="font-medium text-amber-600">7.00€</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">Ensaladas</h3>
+                    <ul class="space-y-4">
+                        <li class="flex flex-col">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-medium text-gray-900">César</h4><span
+                                    class="font-medium text-amber-600">Media 4.50€</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1">Lechuga, pollo empanado, picatostes, queso, cebolla
+                                frita y salsa césar</p>
+                        </li>
+                        <li class="flex flex-col">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-medium text-gray-900">Templada</h4><span
+                                    class="font-medium text-amber-600">Media 5.00€</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1">Pollo a la plancha, quinoa, pimientos, cebolla y salsa
+                                teriyaki</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-serif font-semibold text-gray-800 mb-6 border-b pb-2">Postres Caseros</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-gray-900">Tarta de Queso</h4>
+                            </div><span class="font-medium text-amber-600">2.50€</span>
+                        </li>
+                        <li class="flex justify-between items-start">
+                            <div>
+                                <h4 class="font-medium text-gray-900">Flan de la Casa</h4>
+                            </div><span class="font-medium text-amber-600">2.50€</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-12 bg-amber-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="inline-block p-4 bg-white rounded-2xl shadow-sm border border-amber-100">
+                <h3 class="text-xl font-serif font-bold text-gray-900 mb-2">✨ Especial de Domingo ✨</h3>
+                <p class="text-gray-700">¡No olvides preguntar por nuestro <strong>Plato del Día</strong> todos los
+                    domingos!</p>
+            </div>
+        </div>
+    </section>
+    <section id="horarios" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-serif font-bold mb-8">Visítanos o pide en casa</h2>
+                    <p class="text-gray-400 mb-8">Ofrecemos un ambiente acogedor para que disfrutes con familia y
+                        amigos. Además, te llevamos la comida a casa por solo 1€ de coste de envío.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-gray-800 p-3 rounded-lg text-amber-400"> <svg class="w-6 h-6" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg> </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Horarios</h4>
+                                <p class="text-gray-400 mt-1">Viernes y Sábado: 13:00 - 16:30 | 20:00 - 23:00</p>
+                                <p class="text-gray-400">Domingos: 13:00 - 16:30</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-gray-800 p-3 rounded-lg text-amber-400"> <svg class="w-6 h-6" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg> </div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Contacto y Pedidos</h4>
+                                <p class="text-gray-400 mt-1">Teléfono: 95 597 55 28</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-gray-800 rounded-2xl overflow-hidden h-[400px] flex items-center justify-center border border-gray-700">
+                    <p class="text-gray-400 text-center px-4">[Espacio reservado para el mapa de Google Maps.<br>Se
+                        añadirá al confirmar la dirección]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-gray-950 py-8 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">© 2024 Bar Restaurante JCM. Todos los derechos reservados.</p>
+        </div>
+    </footer> <a href="https://wa.me/34955975528" target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-transform hover:scale-110 z-50 flex items-center justify-center group">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z" />
+        </svg> <span
+            class="absolute right-full mr-4 bg-gray-900 text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">¡Haz
+            tu pedido!</span> </a>
+</body>
+
+</html>

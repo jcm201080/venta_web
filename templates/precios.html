@@ -17,7 +17,7 @@
         <!-- 🟢 BASICO -->
         <div class="card">
             <h3>🟢 Básico</h3>
-            <p class="precio">150€</p>
+            <p class="precio">{{ precios.basico }}</p>
 
             <ul>
                 <li>✔ Página web informativa</li>
@@ -34,7 +34,7 @@
         <!-- 🟡 PROFESIONAL -->
         <div class="card popular">
             <h3>🟡 Profesional</h3>
-            <p class="precio">350€</p>
+            <p class="precio">{{ precios.profesional }}</p>
 
             <ul>
                 <li>✔ Todo lo del plan básico</li>
@@ -51,7 +51,7 @@
         <!-- 🔴 PREMIUM -->
         <div class="card">
             <h3>🔴 Premium</h3>
-            <p class="precio">600€+</p>
+            <p class="precio">{{ precios.premium }}</p>
 
             <ul>
                 <li>✔ Todo lo anterior</li>
@@ -97,6 +97,7 @@
 <section class="contacto">
     <h2>¿Tienes dudas?</h2>
     <p>Escríbenos y te asesoramos sin compromiso</p>
+    <br>
 
     <a href="/contacto" class="btn">Contactar ahora</a>
 </section>

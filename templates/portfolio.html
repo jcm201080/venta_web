@@ -6,27 +6,106 @@
 
 <section class="hero">
     <h2>Proyectos reales en funcionamiento</h2>
-    <p>Ejemplos de webs que ya están trabajando para nuestros clientes</p>
+    <p>Empieza con una web básica y escala a medida que tu negocio crece</p>
+    <p>
+        Desde páginas básicas hasta sistemas completos adaptados a cada negocio
+    </p>
+</section>
+<section>
+    <h2>🚀 Cómo trabajamos</h2>
+    <div class="cards proceso">
+
+        <div class="card paso">
+            <div class="icon">🚀</div>
+            <h3>Empieza simple</h3>
+            <p>Te entregamos una web lista en pocos días para que empieces cuanto antes.</p>
+        </div>
+
+        <div class="card paso">
+            <div class="icon">⚙️</div>
+            <h3>Escala</h3>
+            <p>Añade reservas, pagos o gestión a medida que tu negocio crece.</p>
+        </div>
+
+        <div class="card paso">
+            <div class="icon">🤖</div>
+            <h3>Automatiza</h3>
+            <p>Integra IA para responder clientes y optimizar tu tiempo.</p>
+        </div>
+
+    </div>
 </section>
 
 <!-- 🟢 BASICO -->
 <section>
     <h2>🟢 Web básica</h2>
+
+    <p class="section-desc">
+        Plantillas rápidas y económicas para empezar a tener presencia online.
+        Perfectas para pequeños negocios o primeras webs.
+    </p>
+
+    <div class="cards">
+        {% for web in basicas %}
+
+        <div class="card">
+
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/basicas/' + web.img) }}');">
+            </div>
+
+            <h3>{{ web.nombre.replace('_', ' ').title() }}</h3>
+
+            <a href="/portfolio/basicas/{{ web.archivo }}" class="btn">Explorar web</a>
+
+        </div>
+
+        {% endfor %}
+    </div>
+
+
+</section>
+
+<section>
+    <h2>🔵 Web intermedia</h2>
+    <p class="section-desc">
+        Webs más completas con funcionalidades como formularios, varios idiomas o interacción con clientes.
+    </p>
+
     <div class="cards">
 
         <div class="card">
-            <h3>🍺 Pub</h3>
-            <p>Web visual para mostrar el negocio</p>
-            <a href="https://jcm201080.github.io/piterpub/" target="_blank" class="btn">Ver demo</a>
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/intermedias/camper.png') }}');">
+            </div>
+            <h3>🚐 Alquiler Camper</h3>
+            <p>
+                Web completa con galería de fotos, varios idiomas y contacto directo por email.
+            </p>
+
+            <ul class="features">
+                <li>🌍 Multidioma</li>
+                <li>📸 Galería de imágenes</li>
+                <li>📩 Formulario de contacto</li>
+            </ul>
+            <a href="https://jcm201080.github.io/furgoCamper/" target="_blank" class="btn">Explorar web</a>
         </div>
 
         <div class="card">
-            <h3>🚐 Alquiler Camper</h3>
-            <p>Página sencilla para mostrar servicios</p>
-            <a href="https://jcm201080.github.io/furgoCamper/" target="_blank" class="btn">Ver demo</a>
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/profesionales/peluqueria.png') }}');">
+            </div>
+            <h3>💇 Peluquería</h3>
+            <p>Web moderna con servicios</p>
+            <ul class="features">
+                <li>📸 Galería de imágenes</li>
+                <li>📩 Formulario de contacto</li>
+            </ul>
+            <a href="https://peluqueria.jesuscmweb.com/" target="_blank" class="btn">Explorar web</a>
         </div>
-
     </div>
+
+    
 </section>
 
 <!-- 🟡 PROFESIONAL -->
@@ -35,16 +114,13 @@
     <div class="cards">
 
         <div class="card">
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/profesionales/restaurante.png') }}');">
+            </div>
             <h3>🍔 Restaurante</h3>
             <p>Menú digital + gestión + IA</p>
-            <a href="https://restaurante.jesuscmweb.com" target="_blank" class="btn">Ver demo</a>
-        </div>
-
-        <div class="card">
-            <h3>💇 Peluquería</h3>
-            <p>Web moderna con servicios</p>
-            <a href="https://peluqueria.jesuscmweb.com/" target="_blank" class="btn">Ver demo</a>
-        </div>
+            <a href="https://restaurante.jesuscmweb.com" target="_blank" class="btn">Explorar web</a>
+        </div>      
 
     </div>
 </section>
@@ -55,6 +131,9 @@
     <div class="cards">
 
         <div class="card">
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/avanzado/tienda_info.png') }}');">
+            </div>
             <h3>💻 Tienda informática</h3>
             <p>Gestión completa con facturación</p>
             <a href="https://informatica.jesuscmweb.com/" target="_blank" class="btn">Ver sistema</a>
@@ -65,6 +144,7 @@
 
 <section class="contacto">
     <h2>¿Quieres algo así para tu negocio?</h2>
+    <br>
     <a href="/contacto" class="btn">Pedir presupuesto</a>
 </section>
 

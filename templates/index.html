@@ -8,7 +8,7 @@
 <section class="hero">
     <h2>Webs que hacen crecer tu negocio</h2>
     <p>Desde páginas simples hasta sistemas completos con inteligencia artificial</p>
-    
+
     <div class="hero-buttons">
         <a href="/servicios" class="btn">Ver servicios</a>
         <a href="/contacto" class="btn btn-secondary">Pedir presupuesto</a>
@@ -69,23 +69,39 @@
 
 <!-- 💰 PRECIOS -->
 <section class="precios">
-    <h2>Planes</h2>
+    <h2>💰 Soluciones adaptadas a tu negocio</h2>
+    <p class="section-desc">
+        Desde webs básicas hasta sistemas avanzados. Empieza cuando quieras y escala después.
+    </p>
 
     <div class="cards">
 
+        <!-- 🟢 BASICO -->
         <div class="card">
             <h3>🟢 Básico</h3>
-            <p>Desde 150€</p>
+            <p class="precio-mini">{{ precios.basico }}</p>
+            <p class="mini-text">
+                🌐 Presencia online rápida para tu negocio
+            </p>
         </div>
 
+        <!-- 🟡 PROFESIONAL -->
         <div class="card">
             <h3>🟡 Profesional</h3>
-            <p>Desde 350€</p>
+            <p class="precio-mini">{{ precios.profesional }}</p>
+            <p class="mini-text">
+                ⚙️ Gestión completa y web editable
+            </p>
+            <span class="badge">Más elegido</span>
         </div>
 
+        <!-- 🔴 PREMIUM -->
         <div class="card">
             <h3>🔴 Premium</h3>
-            <p>Desde 600€</p>
+            <p class="precio-mini">{{ precios.premium }}</p>
+            <p class="mini-text">
+                🤖 Automatización e inteligencia artificial
+            </p>
         </div>
 
     </div>
@@ -97,6 +113,7 @@
 <section class="contacto">
     <h2>¿Hablamos?</h2>
     <p>Cuéntanos tu idea y te ayudamos a hacerla realidad</p>
+    <br>
 
     <a href="/contacto" class="btn">Contactar</a>
 </section>
