@@ -5,6 +5,16 @@
     font-family: Arial, sans-serif;
 }
 
+body {
+    background: linear-gradient(
+        to right,
+        #eef9fb 0%,
+        #ffffff 25%,
+        #ffffff 75%,
+        #f5ecfa 100%
+    );
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -340,3 +350,50 @@ li {
         gap: 10px;
     }
 }
+
+
+/* portfolio */
+/* BLOQUE ANCHO */
+.info-box {
+    width: 80%;
+    margin: 40px auto 0 auto;
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(135deg, #4b3c55, #1a1a1a);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+    text-align: center;
+    color: rgb(190, 183, 183);
+}
+
+/* TEXTO PRINCIPAL */
+.info-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* GRID DE FEATURES (clave para que no sea largo) */
+.info-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .info-box {
+        width: 95%;
+    }
+
+    .info-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* destacado */
+
