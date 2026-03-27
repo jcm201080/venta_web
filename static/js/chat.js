@@ -67,3 +67,30 @@ input.addEventListener("keydown", function(e) {
 });
 
 });
+
+
+const nav = document.querySelector(".nav");
+const slider = document.querySelector(".nav-slider");
+const links = document.querySelectorAll(".nav a");
+
+function moverSlider(element) {
+    const rect = element.getBoundingClientRect();
+    const navRect = nav.getBoundingClientRect();
+
+    slider.style.width = rect.width + "px";
+    slider.style.left = (rect.left - navRect.left) + "px";
+}
+
+// 👉 al cargar (activo)
+const activo = document.querySelector(".nav a.activo");
+if (activo) moverSlider(activo);
+
+// 👉 hover
+links.forEach(link => {
+    link.addEventListener("mouseenter", () => moverSlider(link));
+});
+
+// 👉 volver al activo
+nav.addEventListener("mouseleave", () => {
+    if (activo) moverSlider(activo);
+});

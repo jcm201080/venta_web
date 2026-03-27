@@ -395,5 +395,36 @@ li {
 }
 
 
-/* destacado */
+/* navegador inicio*/
+.nav {
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
 
+.nav a {
+    position: relative;
+    color: #ccc;
+    text-decoration: none;
+    padding: 10px 5px;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #fff;
+}
+
+.nav a.activo {
+    color: #00ffcc;
+}
+
+/* 🔥 barra animada */
+.nav-slider {
+    position: absolute;
+    bottom: 10px;
+    height: 2px;
+    background: #00ffcc;
+    transition: all 0.3s ease;
+    width: 0;
+    left: 0;
+}
