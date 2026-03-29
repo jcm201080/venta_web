@@ -428,3 +428,52 @@ li {
     width: 0;
     left: 0;
 }
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav a {
+        margin: 0;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* para que las últimas 2 queden centradas */
+    .nav a:nth-child(4) {
+        grid-column: 2 / 3;
+    }
+
+    .nav a:nth-child(5) {
+        grid-column: 3 / 4;
+    }
+
+    .nav-slider {
+        display: none; /* la barra animada en móvil molesta más que ayuda */
+    }
+}
+
+
+.contacto-info {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contacto-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.contacto-botones {
+    margin-top: 15px;
+}
