@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Caseta Los Romeros</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            color: #222;
+            position: relative;
+        }
+
+        /* FONDO SUAVE */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+                url('/static/img/feria.jpeg?v=2') center/cover no-repeat;
+            z-index: -1;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #c40000, #ffcc00);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 34px;
+        }
+
+        header p {
+            margin-top: 10px;
+        }
+
+        /*Img*/
+        /* HERO */
+        .hero {
+            background: url('/static/img/caseta.jpeg?v=1') center/contain no-repeat;
+            background-color: #942020;
+            height: 360px;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* INFO */
+        .info {
+            text-align: center;
+            padding: 15px;
+            background: #f9f9f9;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* SECCIONES */
+        .section {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+
+        .section h2 {
+            border-left: 5px solid #c40000;
+            padding-left: 10px;
+            color: #c40000;
+        }
+
+        /* ITEMS */
+        .item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #ddd;
+            padding: 8px 0;
+            font-size: 15px;
+        }
+
+        .price {
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            background: #f1f1f1;
+            margin-top: 20px;
+        }
+
+        /*Contacto*/
+        /* CTA */
+        .cta {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .cta a {
+            background: #c40000;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta a:hover {
+            background: #a00000;
+        }
+
+        /* WHATSAPP */
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            font-size: 28px;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* HOVER PLATOS */
+        .item {
+            transition: 0.2s;
+        }
+
+        .item:hover {
+            background: rgba(255, 204, 0, 0.2);
+            transform: scale(1.01);
+        }
+
+        /* ANIMACIÓN */
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s forwards;
+        }
+
+        .section:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .section:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .section:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .section:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="overlay">
+            <h1>💃 CASETA LOS ROMEROS</h1>
+            <p>Feria de Abril 2026</p>
+        </div>
+    </header>
+
+    <div class="info">
+        📍 Calle Pascual Márquez s/n <br>
+        🕐 De 12:00 hasta que el cuerpo aguante <br>
+        🎶 Música todo el día <br>
+        💃 Flamenco en directo 20:00 - 24:00
+    </div>
+
+    <div class="section">
+        <h2>🥘 Entrantes</h2>
+        <div class="item"><span>Jamón Ibérico de Bellota (70gr)</span><span class="price">18€</span></div>
+        <div class="item"><span>Caña de Lomo</span><span class="price">16€</span></div>
+        <div class="item"><span>Queso de Oveja</span><span class="price">12€</span></div>
+        <div class="item"><span>Salchichón Ibérico</span><span class="price">12€</span></div>
+        <div class="item"><span>Chacina variada</span><span class="price">20€</span></div>
+        <div class="item"><span>Patatas Aliñadas</span><span class="price">8€</span></div>
+        <div class="item"><span>Ensaladilla de Langostinos</span><span class="price">12€</span></div>
+        <div class="item"><span>Salmorejo</span><span class="price">6€</span></div>
+        <div class="item"><span>Tomate Aliñado con Melva</span><span class="price">10€</span></div>
+        <div class="item"><span>Pimientos Fritos</span><span class="price">6€</span></div>
+        <div class="item"><span>Tortilla de Patatas</span><span class="price">7€</span></div>
+        <div class="item"><span>Pinchito de Pollo</span><span class="price">4€</span></div>
+        <div class="item"><span>Montadito Lomo con Jamón</span><span class="price">4€</span></div>
+        <div class="item"><span>Caldo de Puchero</span><span class="price">2.50€</span></div>
+        <div class="item"><span>Guisos del día</span><span class="price">10€</span></div>
+    </div>
+
+    <div class="section">
+        <h2>🦐 Mariscos</h2>
+        <div class="item"><span>Gamba Blanca Huelva (12u)</span><span class="price">14€</span></div>
+        <div class="item"><span>Langostino Tigre (8u)</span><span class="price">16€</span></div>
+    </div>
+
+    <div class="section">
+        <h2>🍤 Frituras</h2>
+        <div class="item"><span>Taquitos de Bacalao</span><span class="price">12€</span></div>
+        <div class="item"><span>Adobo</span><span class="price">12€</span></div>
+        <div class="item"><span>Choco</span><span class="price">12€</span></div>
+        <div class="item"><span>Flamenquín cordobés</span><span class="price">14€</span></div>
+        <div class="item"><span>Lagrimitas de Pollo</span><span class="price">12€</span></div>
+        <div class="item"><span>Croquetas de Jamón</span><span class="price">12€</span></div>
+    </div>
+
+    <div class="section">
+        <h2>🥩 Carnes</h2>
+        <div class="item"><span>Solomillo (Whisky o Roquefort)</span><span class="price">17€</span></div>
+        <div class="item"><span>Presa Ibérica</span><span class="price">20€</span></div>
+    </div>
+
+    <div class="section">
+        <h2>🧒 Infantil</h2>
+        <div class="item"><span>Pasta + bebida</span><span class="price">6.50€</span></div>
+        <div class="item"><span>Pizza + bebida</span><span class="price">6.50€</span></div>
+        <div class="item"><span>Perrito + bebida</span><span class="price">6.50€</span></div>
+    </div>
+
+    <div class="section">
+        <h2>🍰 Postres</h2>
+        <div class="item"><span>Surtido Mini Pastelitos (12u)</span><span class="price">10€</span></div>
+        <div class="item"><span>Helados</span><span class="price">S.P.</span></div>
+    </div>
+
+    <div class="section">
+        <h2>🍺 Bebidas</h2>
+        <div class="item"><span>Botellín</span><span class="price">1.30€</span></div>
+        <div class="item"><span>Caña</span><span class="price">1.60€</span></div>
+        <div class="item"><span>Rebujito (jarra)</span><span class="price">12€</span></div>
+        <div class="item"><span>Refrescos</span><span class="price">1.80€</span></div>
+        <div class="item"><span>Combinados</span><span class="price">7€</span></div>
+        <div class="item"><span>Premium</span><span class="price">8€</span></div>
+    </div>
+
+    <div class="footer">
+        IVA incluido | Pan y picos 1€/persona
+    </div>
+
+    <div class="cta">
+        <a href="tel:600000000">📞 Llamar ahora</a>
+    </div>
+
+    <a href="https://wa.me/34600000000" class="whatsapp" target="_blank">
+        💬
+    </a>
+
+</body>
+
+</html>
