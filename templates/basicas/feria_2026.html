@@ -20,7 +20,7 @@
             position: fixed;
             inset: 0;
             background:
-                linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+                linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
                 url('/static/img/feria.jpeg?v=2') center/cover no-repeat;
             z-index: -1;
         }
@@ -181,6 +181,80 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        /* ===== MEJORA MÓVIL ===== */
+        body {
+            font-size: 16px;
+        }
+
+        /* INFO (dirección, horario...) */
+        .info {
+            font-size: 16px;
+            font-weight: 500;
+            color: #111;
+        }
+
+        /* TÍTULOS SECCIONES */
+        .section h2 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        /* ITEMS */
+        .item {
+            font-size: 16px;
+            padding: 12px 0;
+        }
+
+        .item span:first-child {
+            font-weight: 500;
+            color: #111;
+        }
+
+        .price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        /* HERO TEXTO */
+        .overlay h1 {
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .overlay p {
+            font-size: 16px;
+        }
+
+        /* BOTÓN */
+        .cta a {
+            font-size: 16px;
+        }
+
+        /* ===== RESPONSIVE FINO ===== */
+        @media (max-width: 600px) {
+
+            header.hero {
+                height: 280px;
+            }
+
+            .overlay h1 {
+                font-size: 24px;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            .item {
+                font-size: 17px;
+            }
+
+            .price {
+                font-size: 17px;
             }
         }
     </style>
