@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Feria Sevilla 2026{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h2>💃 Cartas digitales para la Feria</h2>
+    <p>Moderniza tu caseta con menús QR rápidos y sin papel</p>
+</section>
+
+
+
+<!-- 📂 EJEMPLOS -->
+<section class="portfolio">
+    <h2>Ejemplos reales</h2>
+
+    <div class="cards">
+
+        <!-- BAR 1 -->
+        <div class="card">
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/feria/bar1.png') }}');">
+            </div>
+
+            <h3>🍻 Caseta Manolo</h3>
+
+            <a href="/static/cartas/feria2026/bar1/" target="_blank" class="btn">
+                Ver carta
+            </a>
+        </div>
+
+        <!-- BAR 2 -->
+        <div class="card">
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/feria/bar2.png') }}');">
+            </div>
+
+            <h3>🍷 Caseta 2</h3>
+
+            <a href="/static/cartas/feria2026/bar2/" target="_blank" class="btn">
+                Ver carta
+            </a>
+        </div>
+
+        <!-- DISEÑO -->
+        <div class="card">
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/basicas/feria_2026.png') }}');">
+            </div>
+
+            <h3>🎨 Diseño alternativo</h3>
+
+            <a href="/portfolio/basicas/feria_2026.html" target="_blank" class="btn">
+                Ver diseño
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- 💰 PRECIO -->
+<section class="precios">
+    <h2>💰 Precio especial feria</h2>
+    <p>Desde <strong>50€</strong> con QR incluido</p>
+    <p style="color:#999;">⚡ Entrega en 24h</p>
+    <br>
+    <br>
+
+    <a href="/contacto" class="btn">Pedir ahora</a>
+
+    <br><br>
+
+    <a href="https://wa.me/34614398084" target="_blank" class="btn btn-secondary">
+        💬 Hablar por WhatsApp
+    </a>
+</section>
+
+{% endblock %}

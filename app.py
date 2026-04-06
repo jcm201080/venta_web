@@ -17,6 +17,7 @@ from routes.servicios import servicios_bp
 from routes.precios import precios_bp
 from routes.portfolio import portfolio_bp
 from routes.contacto import contacto_bp
+from routes.feria import feria_bp
 
 # 🔹 IA
 from ai.simple_ai import generar_respuesta, guardar_conversacion
@@ -76,6 +77,7 @@ app.register_blueprint(servicios_bp, url_prefix="/servicios")
 app.register_blueprint(precios_bp, url_prefix="/precios")
 app.register_blueprint(portfolio_bp, url_prefix="/portfolio")
 app.register_blueprint(contacto_bp, url_prefix="/contacto")
+app.register_blueprint(feria_bp)
 
 
 if __name__ == "__main__":
