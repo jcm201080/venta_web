@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estadísticas Feria</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h1>📊 Estadísticas de la feria</h1>
+
+<h2>🔥 Total visitas: {{ total }}</h2>
+<h3>👥 IPs únicas: {{ ips_unicas }}</h3>
+
+<h3>💬 Clics en WhatsApp: {{ whatsapp }}</h3>
+
+<h3>📅 Detalle últimos 7 días</h3>
+
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Visitas</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fecha, cantidad in datos_7dias %}
+        <tr>
+            <td>{{ fecha }}</td>
+            <td>{{ cantidad }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<canvas id="grafica" width="400" height="200"></canvas>
+
+<h3>🌐 Visitas por página</h3>
+
+<table border="1" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Página</th>
+            <th>Total</th>
+            <th>Últimas 24h</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ruta, total in paginas_total %}
+        <tr>
+            <td>{{ ruta }}</td>
+            <td>{{ total }}</td>
+            <td>
+                {% for r, c in paginas_24h %}
+                    {% if r == ruta %}
+                        {{ c }}
+                    {% endif %}
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<script>
+    const datos = {{ datos_7dias | tojson }};
+
+    const fechas = datos.map(d => d[0]);
+    const visitas = datos.map(d => d[1]);
+
+    new Chart(document.getElementById('grafica'), {
+        type: 'line',
+        data: {
+            labels: fechas,
+            datasets: [{
+                label: 'Visitas últimos 7 días',
+                data: visitas,
+                fill: false,
+                tension: 0.2
+            }]
+        }
+    });
+</script>
+
+</body>
+</html>

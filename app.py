@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify, session
 import uuid
 import json
 import os
+
+from utils.visitas import inicializar_db
 from config import PRECIOS
 
 from dotenv import load_dotenv
@@ -11,6 +13,9 @@ app = Flask(__name__)
 app.secret_key = "clave_super_secreta_123"
 app.config["PRECIOS"] = PRECIOS
 
+# 🔥 INICIALIZAR BD DE VISITAS
+inicializar_db()
+
 # 🔹 IMPORTAR RUTAS
 from routes.index import index_bp
 from routes.servicios import servicios_bp
@@ -18,9 +23,24 @@ from routes.precios import precios_bp
 from routes.portfolio import portfolio_bp
 from routes.contacto import contacto_bp
 from routes.feria import feria_bp
-
+from routes.admin import admin_bp
 # 🔹 IA
 from ai.simple_ai import generar_respuesta, guardar_conversacion
+
+from utils.visitas import registrar_visita
+from flask import request
+
+@app.before_request
+def track_all():
+    # evitar ruido
+    if (
+        request.path.startswith("/static") or
+        request.path.startswith("/admin") or
+        request.path.startswith("/track")
+    ):
+        return
+
+    registrar_visita(origen="web")
 
 # 🧠 MEMORIA EN SERVIDOR
 memoria = {}
@@ -78,6 +98,8 @@ app.register_blueprint(precios_bp, url_prefix="/precios")
 app.register_blueprint(portfolio_bp, url_prefix="/portfolio")
 app.register_blueprint(contacto_bp, url_prefix="/contacto")
 app.register_blueprint(feria_bp)
+app.register_blueprint(admin_bp)
+
 
 
 if __name__ == "__main__":
