@@ -5,8 +5,15 @@
 {% block content %}
 
 <section class="hero">
-    <h2>💃 Cartas digitales para la Feria</h2>
+    <h2>💃 Cartas digitales para la Feria en 24h</h2>
+
+    <p>Desde 50€ o web completa por 80€ sin complicaciones</p>
+
     <p>Moderniza tu caseta con menús QR rápidos y sin papel</p>
+
+    <p style="margin-top:15px; color:#ff9800; font-weight:bold;">
+        ⚡ Plazas limitadas esta semana (trabajo personalizado)
+    </p>
 </section>
 
 
@@ -59,17 +66,81 @@
     </div>
 </section>
 
+
+
+<!-- 🔥 PACK PRO FERIA -->
+<section class="portfolio">
+    <h2>🔥 Web completa para tu caseta (Recomendado)</h2>
+    <p style="text-align:center; color:#666;">
+        Control total: cambia precios, fotos y carta cuando quieras
+    </p>
+
+    <div class="cards">
+
+        <!-- RESTAURANTE 1 -->
+        <div class="card">
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/profesionales/restaurante.png') }}');">
+            </div>
+
+            <h3>🍔 Modelo completo 1</h3>
+
+            <a href="https://restaurante.jesuscmweb.com" target="_blank" class="btn">
+                Ver demo
+            </a>
+        </div>
+
+        <!-- RESTAURANTE 2 -->
+        <div class="card">
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/profesionales/menu.png') }}');">
+            </div>
+
+            <h3>📋 Modelo completo 2</h3>
+
+            <a href="https://menu.jesuscmweb.com" target="_blank" class="btn">
+                Ver demo
+            </a>
+        </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:20px;">
+        <h3 style="color:#ff9800;">💰 Precio feria: 80€</h3>
+        <p>✔️ Web completa<br>
+            ✔️ Editable por ti<br>
+            ✔️ Ideal si cambias la carta cada día</p>
+    </div>
+</section>
+
 <!-- 💰 PRECIO -->
 <section class="precios">
     <h2>💰 Precio especial feria</h2>
-    <p>Desde <strong>50€</strong> con QR incluido</p>
-    <p style="color:#999;">⚡ Entrega en 24h</p>
-    <br>
+
+    <div style="margin-top:20px;">
+        <p><strong>🔹 Básica – 50€</strong></p>
+        <p>✔️ Carta digital + QR<br>
+            ✔️ Sin complicaciones</p>
+    </div>
+
+    <div style="margin-top:20px;">
+        <p><strong style="color:#ff9800;">🔸 Completa – 80€ (RECOMENDADO)</strong></p>
+        <p>✔️ Web completa<br>
+            ✔️ Puedes modificar precios, fotos y productos<br>
+            ✔️ Ideal para feria</p>
+    </div>
+
+    <p style="color:#999; margin-top:20px;">⚡ Entrega en 24h</p>
+
+    <p style="color:#ff9800; font-weight:bold;">
+        ⚠️ Oferta especial solo durante feria
+    </p>
+
     <br>
 
     <a href="/contacto" class="btn">Pedir ahora</a>
 
-    <br><br><br>
+    <br><br>
 
     <a href="https://wa.me/34614398084" target="_blank" class="btn btn-secondary">
         💬 Hablar por WhatsApp

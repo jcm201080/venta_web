@@ -10,6 +10,8 @@
     <meta property="og:image" content="https://creacion.jesuscmweb.com/static/img/preview.png">
     <meta property="og:url" content="https://creacion.jesuscmweb.com/">
     <meta property="og:type" content="website">
+    <meta property="article:author" content="Jesús Castaño">
+    <meta name="description" content="Páginas web rápidas para negocios. Especialistas en bares, catering y eventos.">
     <title>{% block title %}JCM Web{% endblock %}</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
@@ -29,6 +31,9 @@
             <a href="/precios" class="{% if request.path.startswith('/precios') %}activo{% endif %}">Precios</a>
             <a href="/portfolio" class="{% if request.path.startswith('/portfolio') %}activo{% endif %}">Portfolio</a>
             <a href="/contacto" class="{% if request.path.startswith('/contacto') %}activo{% endif %}">Contacto</a>
+            <a href="/feria" class="{% if request.path.startswith('/feria') %}activo{% endif %}">
+                🔥 Feria
+            </a>
 
             <!-- 🔥 barra -->
             <div class="nav-slider"></div>
