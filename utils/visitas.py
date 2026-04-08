@@ -34,6 +34,20 @@ def inicializar_db():
 
 
 def registrar_visita(origen="directo"):
+    print("IP visitante:", request.remote_addr)
+    # 🚫 FILTRAR TU IP (NO CONTARTE A TI)
+    if request.remote_addr == "127.0.0.1":
+        return
+    # 🚫 FILTRAR RUTAS BASURA
+    if (
+        request.path.startswith("/static") or
+        request.path.startswith("/api") or
+        request.path.startswith("/admin") or
+        request.path.startswith("/track") or
+        "favicon" in request.path
+    ):
+        return
+
     conn = get_connection()
     cursor = conn.cursor()
 

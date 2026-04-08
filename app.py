@@ -32,7 +32,6 @@ from flask import request
 
 @app.before_request
 def track_all():
-    # evitar ruido
     if (
         request.path.startswith("/static") or
         request.path.startswith("/admin") or
@@ -40,7 +39,25 @@ def track_all():
     ):
         return
 
-    registrar_visita(origen="web")
+    # 🔥 SOLO UNA VEZ POR SESIÓN
+    if not session.get("visitado"):
+        session["visitado"] = True
+        origen = detectar_origen()
+        registrar_visita(origen=origen)
+
+def detectar_origen():
+    origen_param = request.args.get("origen")
+
+    if origen_param:
+        return origen_param
+
+    ref = request.referrer
+
+    if ref:
+        if "wa.me" in ref:
+            return "whatsapp"
+
+    return "web"
 
 # 🧠 MEMORIA EN SERVIDOR
 memoria = {}

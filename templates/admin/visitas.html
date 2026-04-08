@@ -1,86 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Estadísticas Feria</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            background: #333;
+            color: white;
+        }
+
+        td,
+        th {
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>📊 Estadísticas de la feria</h1>
+    <h1>📊 Estadísticas de la feria</h1>
 
-<h2>🔥 Total visitas: {{ total }}</h2>
-<h3>👥 IPs únicas: {{ ips_unicas }}</h3>
+    <h2>🔥 Total visitas: {{ total }}</h2>
+    <h3>📊 Visitas por origen</h3>
 
-<h3>💬 Clics en WhatsApp: {{ whatsapp }}</h3>
-
-<h3>📅 Detalle últimos 7 días</h3>
-
-<table border="1" cellpadding="5" cellspacing="0">
-    <thead>
-        <tr>
-            <th>Fecha</th>
-            <th>Visitas</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for fecha, cantidad in datos_7dias %}
-        <tr>
-            <td>{{ fecha }}</td>
-            <td>{{ cantidad }}</td>
-        </tr>
+    <ul>
+        {% for origen, cantidad in origenes %}
+        <li>{{ origen }}: {{ cantidad }}</li>
         {% endfor %}
-    </tbody>
-</table>
+    </ul>
+    <h3>👥 IPs únicas: {{ ips_unicas }}</h3>
 
-<canvas id="grafica" width="400" height="200"></canvas>
+    <h3>💬 Clics en WhatsApp: {{ whatsapp }}</h3>
 
-<h3>🌐 Visitas por página</h3>
+    <h3>📅 Detalle últimos 7 días</h3>
 
-<table border="1" cellpadding="5">
-    <thead>
-        <tr>
-            <th>Página</th>
-            <th>Total</th>
-            <th>Últimas 24h</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for ruta, total in paginas_total %}
-        <tr>
-            <td>{{ ruta }}</td>
-            <td>{{ total }}</td>
-            <td>
-                {% for r, c in paginas_24h %}
-                    {% if r == ruta %}
-                        {{ c }}
-                    {% endif %}
-                {% endfor %}
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Visitas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fecha, cantidad in datos_7dias %}
+            <tr>
+                <td>{{ fecha }}</td>
+                <td>{{ cantidad }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-<script>
-    const datos = {{ datos_7dias | tojson }};
+    <canvas id="grafica" width="400" height="200"></canvas>
 
-    const fechas = datos.map(d => d[0]);
-    const visitas = datos.map(d => d[1]);
+    <h3>🌐 Visitas por página</h3>
 
-    new Chart(document.getElementById('grafica'), {
-        type: 'line',
-        data: {
-            labels: fechas,
-            datasets: [{
-                label: 'Visitas últimos 7 días',
-                data: visitas,
-                fill: false,
-                tension: 0.2
-            }]
-        }
-    });
-</script>
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>Página</th>
+                <th>Total</th>
+                <th>Últimas 24h</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ruta, total, ultimas in paginas %}
+            <tr>
+                <td>{{ ruta }}</td>
+                <td>{{ total }}</td>
+                <td>{{ ultimas }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        const datos = {{ datos_7dias | tojson }};
+
+        const fechas = datos.map(d => d[0]);
+        const visitas = datos.map(d => d[1]);
+
+        new Chart(document.getElementById('grafica'), {
+            type: 'line',
+            data: {
+                labels: fechas,
+                datasets: [{
+                    label: 'Visitas últimos 7 días',
+                    data: visitas,
+                    fill: false,
+                    tension: 0.2
+                }]
+            }
+        });
+    </script>
 
 </body>
+
 </html>
