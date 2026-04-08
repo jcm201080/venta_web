@@ -33,11 +33,18 @@ def inicializar_db():
     conn.close()
 
 
+import logging
+
+
 def registrar_visita(origen="directo"):
-    print("IP visitante:", request.remote_addr)
-    # 🚫 FILTRAR TU IP (NO CONTARTE A TI)
-    if request.remote_addr == "127.0.0.1":
+    ip = request.headers.get("X-Forwarded-For", request.remote_addr)
+
+    logging.warning(f"IP visitante: {ip}")
+
+    # 🚫 FILTRAR TU IP
+    if ip == "79.117.225.21":
         return
+
     # 🚫 FILTRAR RUTAS BASURA
     if (
         request.path.startswith("/static") or
@@ -55,7 +62,7 @@ def registrar_visita(origen="directo"):
         INSERT INTO visitas (ip, ruta, origen, fecha)
         VALUES (?, ?, ?, ?)
     ''', (
-        request.remote_addr,
+        ip,
         request.path,
         origen,
         datetime.now().strftime("%Y-%m-%d %H:%M:%S")
