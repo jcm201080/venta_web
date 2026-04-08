@@ -36,11 +36,22 @@
     <h2>🔥 Total visitas: {{ total }}</h2>
     <h3>📊 Visitas por origen</h3>
 
-    <ul>
-        {% for origen, cantidad in origenes %}
-        <li>{{ origen }}: {{ cantidad }}</li>
-        {% endfor %}
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Origen</th>
+                <th>Visitas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for origen, cantidad in origenes %}
+            <tr>
+                <td>{{ origen }}</td>
+                <td>{{ cantidad }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     <h3>👥 IPs únicas: {{ ips_unicas }}</h3>
 
     <h3>💬 Clics en WhatsApp: {{ whatsapp }}</h3>

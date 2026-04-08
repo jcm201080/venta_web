@@ -26,6 +26,7 @@ Este proyecto es una web comercial desarrollada con Flask que permite mostrar:
 ✅ Guardado de conversaciones en JSON  
 ✅ Diseño responsive  
 ✅ Integración con WhatsApp  
+✅ Sistema de tracking de visitas (origen + analítica básica)
 
 ---
 
@@ -46,8 +47,12 @@ venta_web/
 │ ├── precios.py
 │ ├── portfolio.py
 │ ├── contacto.py
+│ ├── admin.py
+│ ├── .py
 │
 ├── templates/
+│ ├── admin
+|      |── visita.html
 │ ├── base.html
 │ ├── index.html
 │ ├── servicios.html
@@ -115,3 +120,38 @@ Desarrollo web + IA aplicada a negocio
 ## 🌍 Demo online
 
 👉 https://webs.jesuscmweb.com
+
+
+## 📊 Tracking de visitas
+
+Usamos parámetros de origen para identificar tráfico:
+
+- feria → QR físico
+- whatsapp → mensajes enviados
+- instagram → perfil/red social
+- email → campañas
+- prospecto → contactos en frío
+
+
+ORIGENES DE TRÁFICO
+
+Feria (QR):
+https://creacion.jesuscmweb.com/feria
+
+WhatsApp:
+https://creacion.jesuscmweb.com/?origen=whatsapp
+
+Instagram:
+https://creacion.jesuscmweb.com/?origen=instagram
+
+Email:
+https://creacion.jesuscmweb.com/?origen=email
+
+Clientes directos:
+https://creacion.jesuscmweb.com/
+
+Prospectos (frío):
+https://creacion.jesuscmweb.com/?origen=prospecto
+
+Ejemplo:
+https://creacion.jesuscmweb.com/?origen=whatsapp

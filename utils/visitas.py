@@ -41,8 +41,14 @@ def registrar_visita(origen="directo"):
 
     logging.warning(f"IP visitante: {ip}")
 
+    # 🚫 FILTRAR BOTS (Google, etc)
+    user_agent = request.headers.get("User-Agent", "").lower()
+
+    if "bot" in user_agent or "spider" in user_agent or "crawl" in user_agent:
+        return
+
     # 🚫 FILTRAR TU IP
-    if ip == "79.117.225.21":
+    if ip == "79.117.":
         return
 
     # 🚫 FILTRAR RUTAS BASURA
@@ -54,6 +60,11 @@ def registrar_visita(origen="directo"):
         "favicon" in request.path
     ):
         return
+
+    # 🔥 DETECTAR ORIGEN
+    origen_param = request.args.get("origen")
+    if origen_param:
+        origen = origen_param
 
     conn = get_connection()
     cursor = conn.cursor()
