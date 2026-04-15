@@ -1,5 +1,5 @@
 PRECIOS = {
-    "basico": "Desde 200€",
-    "profesional": "Desde 400€",
-    "premium": "Desde 700€"
+    "basico": "Desde 199€",
+    "profesional": "Desde 399€",
+    "premium": "Desde 599€"
 }

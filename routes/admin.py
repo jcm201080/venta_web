@@ -104,5 +104,9 @@ from flask import redirect
 
 @admin_bp.route("/track_whatsapp")
 def track_whatsapp():
-    registrar_visita(origen="whatsapp")
-    return redirect("https://wa.me/34614398084")
+    msg = request.args.get("msg", "Hola, quiero información")
+    ruta = request.referrer or "directo"
+
+    registrar_visita(origen="whatsapp", ruta=ruta)
+
+    return redirect(f"https://wa.me/34614398084?text={msg}")

@@ -1,15 +1,51 @@
 {% extends "base.html" %}
 
-{% block title %}Portfolio{% endblock %}
+{% block title %}Ejemplos reales{% endblock %}
 
 {% block content %}
 
 <section class="hero">
-    <h2>Proyectos reales en funcionamiento</h2>
+    <h2>Ejemplos reales de webs que ya están funcionando</h2>
+    <p>Elige un modelo y te lo adaptamos a tu negocio en 24h</p>
     <p>Empieza con una web básica y escala a medida que tu negocio crece</p>
     <p>
         Desde páginas básicas hasta sistemas completos adaptados a cada negocio
     </p>
+</section>
+
+<section class="destacado">
+
+    <h2>🛒 Tienda online lista para vender</h2>
+
+    <p class="section-desc">
+        Empieza a vender productos online desde el primer día. Sin conocimientos técnicos.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/avanzado/tienda_demo.png') }}');">
+            </div>
+
+            <h3>🛒 Tienda online completa</h3>
+
+            <p>
+                Carrito, pedidos, gestión de productos y WhatsApp integrado.
+            </p>
+
+            <a href="https://tienda-demo.jesuscmweb.com/" target="_blank" class="btn">
+                Ver tienda en directo
+            </a>
+
+            <a href="/track_whatsapp?msg=Hola%20quiero%20una%20tienda%20online%20como%20esta" class="btn btn-secondary">
+                Quiero una igual
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
 <section>
     <h2>🚀 Cómo trabajamos</h2>
@@ -60,6 +96,9 @@
             <a href="https://restaurante.jesuscmweb.com" target="_blank" class="btn">
                 Ver demo completa
             </a>
+            <a href="/track_whatsapp?msg=Hola%20quiero%20una%20web%20como%20esta" class="btn btn-secondary">
+                Quiero una igual
+            </a>
         </div>
 
         <!-- 🔥 NUEVA -->
@@ -72,6 +111,9 @@
 
             <a href="https://menu.jesuscmweb.com" target="_blank" class="btn">
                 Ver versión rápida
+            </a>
+            <a href="/track_whatsapp?msg=Hola%20quiero%20una%20web%20como%20esta" class="btn btn-secondary">
+                Quiero una igual
             </a>
         </div>
 
@@ -158,10 +200,10 @@
 </section>
 <div class="info-box">
     <p class="info-text">
-        ✔ Sin papel  
-        ✔ Cambios rápidos  
-        ✔ QR listo para imprimir  
-        ✔ Funciona en móvil sin instalar nada  
+        ✔ Sin papel
+        ✔ Cambios rápidos
+        ✔ QR listo para imprimir
+        ✔ Funciona en móvil sin instalar nada
     </p>
 
     <a href="/feria" class="btn">Ver más detalles</a>
@@ -259,8 +301,12 @@
 </section>
 
 <section class="contacto">
-    <h2>¿Quieres algo así para tu negocio?</h2>
+    <h2>¿Quieres empezar a vender con una web así?</h2>
+    <p>Te la dejamos lista en 24h, sin complicaciones</p>
     <br>
+    <a href="/track_whatsapp?msg=Hola%20quiero%20mi%20web%20lista%20para%20vender" class="btn">
+        Hablar por WhatsApp
+    </a>
     <a href="/contacto" class="btn">Pedir presupuesto</a>
 </section>
 
