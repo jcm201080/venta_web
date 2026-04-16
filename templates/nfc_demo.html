@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Dejar reseña{% endblock %}
+
+{% block content %}
+
+<div class="nfc-img">
+    <img src="/static/img/nfc-card.png" alt="Tarjeta NFC reseñas">
+</div>
+<section class="nfc-demo">
+    <h2>📡 Consigue más reseñas automáticamente</h2>
+    <p>Convierte cada cliente en una reseña con solo acercar el móvil</p>
+    <p>Déjanos tu reseña o contáctanos directamente</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>⭐ Dejar reseña</h3>
+            <a href="https://search.google.com/local/writereview?placeid=XXXX" class="btn">
+                Ir a Google
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>💬 WhatsApp</h3>
+            <a href="/track_whatsapp?msg=Hola%20vengo%20desde%20NFC" class="btn btn-secondary">
+                Escribir por WhatsApp
+            </a>
+        </div>
+
+    </div>
+
+    <button onclick="toggleInfo()" class="btn">
+        ¿Cómo funciona?
+    </button>
+
+    <div id="infoNFC" style="display:none; margin-top:20px;">
+        <p>📡 Coloca la tarjeta en tu mostrador o mesa.</p>
+        <p>📱 El cliente acerca su móvil automáticamente.</p>
+        <p>⭐ Se abre Google y puede dejar la reseña en segundos.</p>
+        <p>🚀 Más reseñas = más clientes para tu negocio.</p>
+    </div>
+    <a href="/track_whatsapp?msg=Hola%20quiero%20mi%20tarjeta%20NFC%20como%20la%20demo" class="btn btn-secondary">
+        Quiero esto para mi negocio
+    </a>
+    <p style="margin-top:10px; font-size:14px;">
+        ✔ Configuración incluida · ✔ Listo para usar
+    </p>
+</section>
+
+
+
+<script>
+    function toggleInfo() {
+        const div = document.getElementById("infoNFC");
+        div.style.display = div.style.display === "none" ? "block" : "none";
+    }
+</script>
+{% endblock %}

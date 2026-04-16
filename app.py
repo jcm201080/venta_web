@@ -24,6 +24,7 @@ from routes.portfolio import portfolio_bp
 from routes.contacto import contacto_bp
 from routes.feria import feria_bp
 from routes.admin import admin_bp
+from routes.nfc import nfc_bp
 # 🔹 IA
 from ai.simple_ai import generar_respuesta, guardar_conversacion
 
@@ -116,6 +117,7 @@ app.register_blueprint(portfolio_bp, url_prefix="/portfolio")
 app.register_blueprint(contacto_bp, url_prefix="/contacto")
 app.register_blueprint(feria_bp)
 app.register_blueprint(admin_bp)
+app.register_blueprint(nfc_bp)
 
 
 

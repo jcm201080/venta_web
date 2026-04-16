@@ -36,7 +36,7 @@ def inicializar_db():
 import logging
 
 
-def registrar_visita(origen="directo"):
+def registrar_visita(origen="directo", ruta=None):
     ip = request.headers.get("X-Forwarded-For", request.remote_addr)
 
     logging.warning(f"IP visitante: {ip}")
