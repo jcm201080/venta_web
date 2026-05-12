@@ -1,158 +1,79 @@
-from config import PRECIOS
-
 import os
 import json
+from openai import OpenAI
+from config import PRECIOS
+from dotenv import load_dotenv
 
-def generar_respuesta(contexto):
-    ultimo = contexto[-1]["content"].lower()
+# Importamos el cerebro desde el nuevo archivo
+from ai.prompts import PROMPT_VENDEDOR_ESTRELLA
 
+# Cargar variables de entorno
+load_dotenv()
+API_KEY = os.getenv("OPENAI_API_KEY")
+
+if API_KEY:
+    client = OpenAI(api_key=API_KEY)
+else:
+    client = None
+
+# ==========================================
+# 🛡️ SISTEMA DE RESPALDO (GRATUITO)
+# ==========================================
+def respuesta_gratuita_basica(contexto):
+    ultimo_mensaje = contexto[-1]["content"].lower()
     basico = PRECIOS["basico"]
     pro = PRECIOS["profesional"]
     premium = PRECIOS["premium"]
 
-    # 💰 PRECIOS (mejorado)
-    if any(p in ultimo for p in ["precio", "cuanto", "coste"]):
-        return (
-            f"Te explico las opciones más habituales 👇\n\n"
-
-            f"🟢 Web básica ({basico})\n"
-            "Para empezar rápido y tener presencia online.\n\n"
-
-            f"🟡 Web profesional ({pro})\n"
-            "La opción más elegida para negocios activos.\n\n"
-
-            f"🔴 Web con IA ({premium})\n"
-            "Automatiza tu negocio y ahorra tiempo.\n\n"
-
-            "💡 El precio es orientativo según lo que necesites.\n\n"
-
-            "👉 Si me dices tu negocio, te recomiendo la mejor opción 😉"
-        )
-
-    # 🎯 QUIERE WEB
-    elif any(p in ultimo for p in ["quiero web", "pagina web", "hacer web"]):
-        return (
-            "Perfecto 🚀 vamos a hacerlo fácil:\n\n"
-            "1️⃣ ¿Qué tipo de negocio tienes?\n"
-            "2️⃣ ¿Qué quieres conseguir? (clientes, reservas, ventas...)\n\n"
-            "👉 Con eso te recomiendo la mejor opción sin complicaciones."
-        )
-
-    # 🧠 NEGOCIO DETECTADO
-    elif any(p in ultimo for p in ["negocio", "tengo", "soy"]):
-        return (
-            "Genial 🔥 eso tiene mucho potencial.\n\n"
-
-            f"👉 Empezar rápido → web básica ({basico})\n"
-            f"👉 Gestionar clientes → web profesional ({pro})\n"
-            f"👉 Automatizar → web con IA ({premium})\n\n"
-
-            "👉 ¿Qué te gustaría mejorar ahora mismo?"
-        )
-
-    # 🤖 IA
-    elif "ia" in ultimo:
-        return (
-            "La IA convierte tu web en un asistente automático 🤖\n\n"
-            "✔ Responde clientes\n"
-            "✔ Explica tus servicios\n"
-            "✔ Puede gestionar reservas o pedidos\n\n"
-            "👉 Ideal si quieres ahorrar tiempo y no perder oportunidades."
-        )
-
-    # ⏱ TIEMPO
-    elif any(p in ultimo for p in ["tiempo", "tarda", "dias"]):
-        return (
-            "Trabajamos rápido 🚀\n\n"
-            "🟢 Básica → 1-2 días\n"
-            "🟡 Profesional → 3-5 días\n"
-            "🔴 IA → 5-7 días\n\n"
-            "👉 Siempre intentamos entregarlo lo antes posible."
-        )
-    elif any(p in ultimo for p in ["presupuesto", "precio exacto", "cuanto vale", "cuanto seria"]):
-        return (
-            "Perfecto 👌\n\n"
-            "Para darte un precio exacto necesito saber:\n\n"
-            "👉 Tipo de negocio\n"
-            "👉 Qué necesitas (web, reservas, tienda...)\n\n"
-            "Puedes decírmelo aquí o escribirme directamente por WhatsApp 📲"
-        )
-    # 🎯 RECOMENDACIÓN AUTOMÁTICA
-    elif any(p in ultimo for p in ["restaurante", "bar", "cafeteria"]):
-        return (
-            "Perfecto 🍔\n\n"
-            "Para un restaurante te recomiendo:\n\n"
-            f"👉 Web profesional ({pro})\n"
-            "Porque podrás gestionar menú, clientes o pedidos.\n\n"
-            "👉 Si quieres automatizar reservas o pedidos → plan con IA.\n\n"
-            "¿Quieres algo sencillo o más completo?"
-        )
-
-    elif any(p in ultimo for p in ["peluqueria", "barberia", "estetica"]):
-        return (
-            "Genial 💇‍♂️\n\n"
-            "Lo ideal para tu caso:\n\n"
-            f"👉 Web profesional ({pro})\n"
-            "Para gestionar citas y servicios.\n\n"
-            "👉 Con IA puedes automatizar reservas.\n\n"
-            "¿Quieres que los clientes puedan reservar solos?"
-        )
-
-    elif any(p in ultimo for p in ["tienda", "vender", "productos"]):
-        return (
-            "Perfecto 🛒\n\n"
-            "Para vender online necesitas:\n\n"
-            f"👉 Web profesional ({pro}) o superior\n"
-            "Para gestionar productos y pedidos.\n\n"
-            "👉 Si quieres automatizar ventas → plan con IA.\n\n"
-            "¿Qué tipo de productos vendes?"
-        )
-
-    elif any(p in ultimo for p in ["recomienda", "que plan", "cual elegir"]):
-        return (
-            "Te lo pongo fácil 👇\n\n"
-            f"👉 Empezar → Básico ({basico})\n"
-            f"👉 Negocio activo → Profesional ({pro})\n"
-            f"👉 Automatizar → IA ({premium})\n\n"
-            "👉 Si me dices qué negocio tienes, te digo exactamente cuál elegir 😉"
-        )
-
-    elif any(p in ultimo for p in ["no se", "no tengo claro", "duda"]):
-        return (
-            "No te preocupes 👌\n\n"
-            "Te ayudo a elegir la mejor opción según tu caso.\n\n"
-            "👉 ¿A qué te dedicas?"
-        )
-
-    # 💬 CIERRE (MUY IMPORTANTE)
+    if any(p in ultimo_mensaje for p in ["precio", "cuanto", "coste", "caro"]):
+        return f"Podemos ser flexibles 😊.\nTenemos el Básico ({basico}), Profesional ({pro}) o Premium con IA ({premium}).\nSi se te va de presupuesto, déjame tu WhatsApp y miramos qué podemos ajustarte. ¿Te parece?"
+    
+    elif any(p in ultimo_mensaje for p in ["peluqueria", "barberia", "estetica", "demo", "ejemplo"]):
+        return f"¡Genial! 💇‍♂️ Tenemos el plan Profesional ({pro}) que es brutal.\nMira esta demo funcionando real: https://peluqueria-demo.jesuscmweb.com/ \n¿Te gustaría algo así para tu negocio?"
+    
     else:
-        return (
-            "Cuéntame un poco sobre tu negocio 😊\n\n"
+        return "¡Hola! Cuéntame un poco sobre tu negocio 😊\n👉 ¿A qué te dedicas?\n👉 ¿Quieres captar clientes, vender o gestionar reservas?\nTe diré exactamente qué necesitas 👌"
 
-            "👉 ¿A qué te dedicas?\n"
-            "👉 ¿Quieres captar clientes, vender o automatizar?\n\n"
+# ==========================================
+# 🧠 GENERADOR DE RESPUESTAS (INTENTA IA PRIMERO)
+# ==========================================
+def generar_respuesta(contexto):
+    if not client:
+        return respuesta_gratuita_basica(contexto)
 
-            "Y te digo exactamente qué necesitas 👌"
+    mensajes_api = [{"role": "system", "content": PROMPT_VENDEDOR_ESTRELLA}]
+    for msg in contexto:
+        mensajes_api.append({"role": msg["role"], "content": msg["content"]})
+
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=mensajes_api,
+            temperature=0.7,
+            max_tokens=300
         )
+        return response.choices[0].message.content
 
+    except Exception as e:
+        print(f"❌ Error con OpenAI ({e}). Activando sistema de respaldo.")
+        return respuesta_gratuita_basica(contexto)
 
-
+# ==========================================
+# 💾 GUARDADO DE CONVERSACIONES
+# ==========================================
 def guardar_conversacion(user_id, mensaje, respuesta):
     archivo = "conversaciones.json"
-
     data = []
-
     if os.path.exists(archivo):
-        with open(archivo, "r") as f:
-            data = json.load(f)
-
+        try:
+            with open(archivo, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except json.JSONDecodeError:
+            pass 
     data.append({
         "user_id": user_id,
         "mensaje": mensaje,
         "respuesta": respuesta
     })
-
-    with open(archivo, "w") as f:
-        json.dump(data, f, indent=4)
-
-
+    with open(archivo, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
