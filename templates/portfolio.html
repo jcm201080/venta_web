@@ -13,16 +13,39 @@
     </p>
 </section>
 
+<!-- ⭐ SISTEMAS ESTRELLA (PELUQUERÍA Y TIENDA) -->
 <section class="destacado">
 
-    <h2>🛒 Tienda online lista para vender</h2>
+    <h2>⭐ Sistemas Estrella listos para vender</h2>
 
     <p class="section-desc">
-        Empieza a vender productos online desde el primer día. Sin conocimientos técnicos.
+        Empieza a recibir reservas o vender productos desde el primer día. Sin conocimientos técnicos.
     </p>
 
     <div class="cards">
 
+        <!-- 💇 PELUQUERIA (Movida aquí arriba con nueva URL) -->
+        <div class="card">
+            <div class="card-img"
+                style="background-image: url('{{ url_for('static', filename='img/profesionales/peluqueria.png') }}');">
+            </div>
+
+            <h3>💇 Sistema para Peluquerías</h3>
+
+            <p>
+                Web moderna con sistema de reservas 24/7. Tus clientes reservan solos.
+            </p>
+
+            <a href="https://peluqueria-demo.jesuscmweb.com/" target="_blank" class="btn">
+                Ver demo interactiva
+            </a>
+
+            <a href="/track_whatsapp?msg=Hola%20quiero%20el%20sistema%20de%20reservas%20para%20peluquerias" class="btn btn-secondary">
+                Quiero una igual
+            </a>
+        </div>
+
+        <!-- 🛒 TIENDA ONLINE -->
         <div class="card">
             <div class="card-img"
                 style="background-image: url('{{ url_for('static', filename='img/avanzado/tienda_demo.png') }}');">
@@ -47,6 +70,7 @@
     </div>
 
 </section>
+
 <section>
     <h2>🚀 Cómo trabajamos</h2>
     <div class="cards proceso">
@@ -72,7 +96,7 @@
     </div>
 </section>
 
-<!-- 🟡 PROFESIONAL (DESTACADO) -->
+<!-- 🟡 PROFESIONAL (RESTAURANTES) -->
 <section class="destacado">
 
     <h2>🟡 Soluciones web para restaurantes</h2>
@@ -82,7 +106,6 @@
         Elige lo que necesita tu negocio hoy y escala cuando quieras.
     </p>
 
-    <!-- CARD VISUAL (la de siempre pero más limpia) -->
     <div class="cards">
 
         <!-- ORIGINAL -->
@@ -118,13 +141,11 @@
         </div>
 
     </div>
-    <!-- NUEVO BLOQUE ANCHO -->
+    
     <div class="info-box">
-
         <p class="info-text">
             Sistema web totalmente personalizable con gestión completa desde móvil o ordenador.
         </p>
-
         <div class="info-features">
             <div>📱 Edita desde móvil o PC en cualquier momento</div>
             <div>🧾 Añade, edita o elimina productos y precios</div>
@@ -134,13 +155,11 @@
             <div>🔐 Acceso privado: solo el administrador decide quién puede modificar</div>
             <div>🤖 Posibilidad de integrar IA para atención automática</div>
         </div>
-
         <p class="mini-text">
             ✔ Sin conocimientos técnicos
             ✔ Tú decides qué cambiar y cuándo
             ✔ Escalable según crece tu negocio
         </p>
-
     </div>
 
 </section>
@@ -156,43 +175,28 @@
 
     <div class="cards">
 
-        <!-- CARTA 1 -->
         <div class="card">
             <div class="card-img"
                 style="background-image: url('{{ url_for('static', filename='img/feria/bar1.png') }}');">
             </div>
-
             <h3>🍻 Carta Feria - Modelo 1</h3>
-
-            <a href="/static/cartas/feria2026/bar1/" target="_blank" class="btn">
-                Ver carta
-            </a>
+            <a href="/static/cartas/feria2026/bar1/" target="_blank" class="btn">Ver carta</a>
         </div>
 
-        <!-- CARTA 2 -->
         <div class="card">
             <div class="card-img"
                 style="background-image: url('{{ url_for('static', filename='img/feria/bar2.png') }}');">
             </div>
-
             <h3>🍷 Carta Feria - Modelo 2</h3>
-
-            <a href="/static/cartas/feria2026/bar2/" target="_blank" class="btn">
-                Ver carta
-            </a>
+            <a href="/static/cartas/feria2026/bar2/" target="_blank" class="btn">Ver carta</a>
         </div>
 
-        <!-- DISEÑO -->
         <div class="card">
             <div class="card-img"
                 style="background-image: url('{{ url_for('static', filename='img/basicas/feria_2026.png') }}');">
             </div>
-
             <h3>🎨 Diseño alternativo</h3>
-
-            <a href="/portfolio/basicas/feria_2026.html" target="_blank" class="btn">
-                Ver diseño
-            </a>
+            <a href="/portfolio/basicas/feria_2026.html" target="_blank" class="btn">Ver diseño</a>
         </div>
 
     </div>
@@ -205,7 +209,6 @@
         ✔ QR listo para imprimir
         ✔ Funciona en móvil sin instalar nada
     </p>
-
     <a href="/feria" class="btn">Ver más detalles</a>
 </div>
 
@@ -220,25 +223,19 @@
 
     <div class="cards">
         {% for web in basicas %}
-
         <div class="card">
-
             <div class="card-img"
                 style="background-image: url('{{ url_for('static', filename='img/basicas/' + web.img) }}');">
             </div>
-
             <h3>{{ web.nombre.replace('_', ' ').title() }}</h3>
-
             <a href="/portfolio/basicas/{{ web.archivo }}" class="btn">Explorar web</a>
-
         </div>
-
         {% endfor %}
     </div>
 
-
 </section>
 
+<!-- 🔵 INTERMEDIA (Se quitó la peluquería de aquí) -->
 <section>
     <h2>🔵 Web intermedia</h2>
     <p class="section-desc">
@@ -255,7 +252,6 @@
             <p>
                 Web completa con galería de fotos, varios idiomas y contacto directo por email.
             </p>
-
             <ul class="features">
                 <li>🌍 Multidioma</li>
                 <li>📸 Galería de imágenes</li>
@@ -264,24 +260,9 @@
             <a href="https://jcm201080.github.io/furgoCamper/" target="_blank" class="btn">Explorar web</a>
         </div>
 
-        <div class="card">
-            <div class="card-img"
-                style="background-image: url('{{ url_for('static', filename='img/profesionales/peluqueria.png') }}');">
-            </div>
-            <h3>💇 Peluquería</h3>
-            <p>Web moderna con servicios</p>
-            <ul class="features">
-                <li>📸 Galería de imágenes</li>
-                <li>📩 Formulario de contacto</li>
-            </ul>
-            <a href="https://peluqueria.jesuscmweb.com/" target="_blank" class="btn">Explorar web</a>
-        </div>
     </div>
 
-
 </section>
-
-
 
 <!-- 🔴 AVANZADO -->
 <section>

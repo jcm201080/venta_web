@@ -1,6 +1,11 @@
 from flask import Blueprint, render_template
 import sqlite3
 from flask import request, abort
+import json
+import os
+from flask import render_template
+# Asegúrate de importar tu Blueprint, asumo que se llama admin_bp
+# from . import admin_bp 
 
 ADMIN_PASSWORD = "4812"
 
@@ -110,3 +115,23 @@ def track_whatsapp():
     registrar_visita(origen="whatsapp", ruta=ruta)
 
     return redirect(f"https://wa.me/34614398084?text={msg}")
+
+
+
+
+@admin_bp.route('/conversaciones')
+def ver_conversaciones():
+    archivo = "conversaciones.json"
+    conversaciones = []
+    
+    if os.path.exists(archivo):
+        with open(archivo, "r", encoding="utf-8") as f:
+            try:
+                conversaciones = json.load(f)
+            except json.JSONDecodeError:
+                conversaciones = []
+                
+    # Le damos la vuelta a la lista para ver los mensajes más recientes arriba
+    conversaciones.reverse()
+    
+    return render_template("admin/conversaciones.html", conversaciones=conversaciones)

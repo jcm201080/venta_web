@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Leads y Conversaciones{% endblock %}
+
+{% block content %}
+<section style="padding: 120px 20px 50px; max-width: 800px; margin: auto;">
+    <h2>💬 Registro de Conversaciones (Leads)</h2>
+    <p>Revisa aquí lo que la IA está hablando con tus clientes.</p>
+
+    <div style="margin-top: 30px;">
+        {% for conv in conversaciones %}
+        <div style="background-color: #1a1a1a; border-left: 4px solid #00d2ff; padding: 15px; margin-bottom: 15px; border-radius: 5px;">
+            <p style="font-size: 0.8em; color: #888;">ID Cliente: {{ conv.user_id[:8] }}...</p>
+            <p><strong>👤 Cliente:</strong> <span style="color: #fff;">{{ conv.mensaje }}</span></p>
+            <p><strong>🤖 IA:</strong> <span style="color: #bbb;">{{ conv.respuesta | safe }}</span></p>
+        </div>
+        {% else %}
+        <div style="text-align: center; padding: 50px;">
+            <p>Aún no hay conversaciones registradas.</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

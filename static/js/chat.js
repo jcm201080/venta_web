@@ -6,6 +6,14 @@ const input = document.getElementById("chat-input");
 const body = document.getElementById("chat-body");
 const closeBtn = document.getElementById("chat-close");
 
+// Función para convertir URLs en enlaces clickeables
+function linkify(text) {
+    const urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function(url) {
+        return '<a href="' + url + '" target="_blank" style="color: #00d2ff; text-decoration: underline; font-weight: bold;">' + url + '</a>';
+    });
+}
+
 let timeout;
 
 function addMessage(text, type) {
@@ -54,7 +62,10 @@ input.addEventListener("keydown", function(e) {
         })
         .then(res => res.json())
         .then(data => {
-            addMessage(data.respuesta.replace(/\n/g, "<br>"), "bot");
+            // 1. Convertimos los enlaces
+            let mensajeConEnlaces = linkify(data.respuesta);
+            // 2. Aplicamos los saltos de línea y lo mostramos
+            addMessage(mensajeConEnlaces.replace(/\n/g, "<br>"), "bot");
         })
         .catch(err => {
             addMessage("Error conectando con la IA", "bot");
